@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.content {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #000;
+}
+
+.main {
+    width: 95%;
+    height: 91%;
+
+    display: flex;
+    border-radius: 5px;
+    background-image: url('./assets/background');
+    background-position: center;
+}
+
+.main__image {
+    position: absolute;
+    left: -300px;
+    bottom: -120px;
+}
