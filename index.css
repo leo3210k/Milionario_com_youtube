@@ -1,6 +1,25 @@
+:root {
+    --black: #000;
+    --flush-orange: #ff7600;
+    --harlequin: #36ff00;
+    --tulip-tree: #e8a83f;
+    --white: #fff;
+}
+
+@keyframes button-scale {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
 * {
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Roboto-mono', sans-serif;
     overflow: hidden;
 }
 
@@ -12,7 +31,7 @@
     justify-content: center;
     align-items: center;
 
-    background-color: #000;
+    background-color: var(--black);
 }
 
 .main {
@@ -20,13 +39,56 @@
     height: 91%;
 
     display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     border-radius: 5px;
     background-image: url('./assets/background');
     background-position: center;
 }
 
-.main__image {
+.main__logo {
+    width: 150px;
+    height: 60px;
+}
+
+.main__red-line {
     position: absolute;
     left: -300px;
     bottom: -120px;
+}
+
+.main__text {
+    color: var(--white);
+    font-size: 1rem;
+    text-align: center;
+}
+
+.main__text--size {
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+
+.main__text--color {
+    color: var(--tulip-tree);
+}
+
+.main__video {
+    width: 460px;
+    height: 260px;
+    border-radius: 10px;
+}
+
+.main__button {
+    padding: 15px 40px;
+    margin-bottom: 20px;
+
+    border: none;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    
+    box-shadow: 0px 0px 500px var(--harlequin);
+    background-color: var(--harlequin);
+    animation: button-scale 2s linear infinite alternate;
 }
