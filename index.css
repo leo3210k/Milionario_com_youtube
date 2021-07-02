@@ -6,13 +6,60 @@
     --white: #fff;
 }
 
+@keyframes screen-fadeOut {
+    0% {
+        display: flex;
+    }
+
+    100% {
+        display: none;
+    }
+}
+
+@keyframes screen-fadeIn {
+    0% {
+        display: none;
+    }
+
+    100% {
+        display: flex;
+    }
+}
+
 @keyframes button-scale {
-    from {
+    0% {
         transform: scale(1);
     }
 
-    to {
+    100% {
         transform: scale(1.2);
+    }
+}
+
+@keyframes button-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(359deg);
+    }
+}
+
+@keyframes button-waves {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    90% {
+        opacity: 1;
+        transform: scale(1.9);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(2);
     }
 }
 
@@ -38,13 +85,32 @@
     width: 95%;
     height: 91%;
 
+    border-radius: 5px;
+    background-image: url('./assets/background');
+    background-position: center;
+}
+
+.screen-1 {
+    width: 100%;
+    height: 100%;
+
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    animation: screen-fadeOut 10s linear infinite alternate;
+}
+
+.screen-2 {
+    width: 100%;
+    height: 100%;
+
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    border-radius: 5px;
-    background-image: url('./assets/background');
-    background-position: center;
+    animation: screen-fadeIn 0s linear infinite alternate;
+    animation-delay: 10s;
 }
 
 .main__logo {
@@ -60,12 +126,12 @@
 
 .main__text {
     color: var(--white);
-    font-size: 1rem;
+    font-size: 1.2rem;
     text-align: center;
 }
 
 .main__text--size {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     font-weight: bold;
 }
 
@@ -81,7 +147,7 @@
 
 .main__button {
     padding: 15px 40px;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 
     border: none;
     border-radius: 50px;
@@ -90,5 +156,105 @@
     
     box-shadow: 0px 0px 500px var(--harlequin);
     background-color: var(--harlequin);
-    animation: button-scale 2s linear infinite alternate;
+    animation: button-scale 1s linear infinite alternate;
+}
+
+.container {
+    width: 100%;
+    height: 80%;
+    display: flex;
+}
+
+.container-1 {
+    width: 50%;
+    height: 80%;
+    margin-left: 15px;
+    margin-top: 40px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.main__text-2 {
+    color: var(--white);
+    font-size: 1.2rem;
+    line-height: 40px;
+}
+
+.main__text--size-2 {
+    line-height: 60px;
+    font-size: 3.4rem;
+    font-weight: bold;
+}
+
+.main__button-2 {
+    position: absolute;
+    left: 60px;
+    bottom: 160px;
+    width: 20%;
+    height: 10%;
+
+    border: none;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    
+    box-shadow: 0px 0px 500px var(--harlequin);
+    background-color: var(--harlequin);
+    animation: button-scale 1s linear infinite alternate;
+}
+
+.container-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 190px;
+    margin-bottom: 70px;
+}
+
+.container-2__circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: button-rotate 25s linear infinite;
+}
+
+.container-2__play {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    border-radius: 100%;
+    box-shadow: 0px 0px 500px var(--tulip-tree);
+    background-color: var(--tulip-tree);
+    animation: button-scale 1s linear infinite alternate;
+}
+
+.container-2::before {
+    content: '';
+    position: absolute;
+    height: 255px;
+    width: 255px;
+
+    border: 0.2px solid var(--tulip-tree);
+    border-radius: 50%;
+    animation: button-waves 3s linear infinite;
+}
+
+.container-2::after {
+    content: '';
+    position: absolute;
+    height: 255px;
+    width: 255px;
+
+    border: 0.2px solid var(--tulip-tree);
+    border-radius: 50%;
+    animation: button-waves 3s linear infinite;
+    animation-delay: 0.5s;
 }
