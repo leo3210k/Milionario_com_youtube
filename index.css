@@ -153,6 +153,7 @@
     border-radius: 50px;
     font-size: 0.9rem;
     font-weight: bold;
+    cursor: pointer;
     
     box-shadow: 0px 0px 500px var(--harlequin);
     background-color: var(--harlequin);
@@ -198,6 +199,7 @@
     border-radius: 50px;
     font-size: 0.9rem;
     font-weight: bold;
+    cursor: pointer;
     
     box-shadow: 0px 0px 500px var(--harlequin);
     background-color: var(--harlequin);
@@ -257,4 +259,10 @@
     border-radius: 50%;
     animation: button-waves 3s linear infinite;
     animation-delay: 0.5s;
+}
+
+.main__button:hover,
+.main__button-2:hover {
+    background-color: var(--tulip-tree);
+    box-shadow: 0px 0px 500px var(--tulip-tree);
 }
